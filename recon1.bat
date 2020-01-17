@@ -1,10 +1,17 @@
 @echo off
-
 call:init
+
+:main_loop
 call:basic_info
 call:select
 pause
+
+goto:main_loop
 goto:eof
+
+
+
+
 
 :init
 title Recon1
@@ -15,9 +22,23 @@ powershell /NoProfile /NoLogo /command "Write-Host -NoNewLine -ForegroundColor D
 echo.
 echo Options:
 echo 1) ipconfig
+echo 2) [WIP]
 exit /b
 
 :select
 choice /C 123456789 /N
-echo %ERRORLEVEL%
+cls
+if ERRORLEVEL 1 call:c1
+if ERRORLEVEL 2 call:c2
+if ERRORLEVEL 3 call:c3
+if ERRORLEVEL 4 call:c4
+if ERRORLEVEL 5 call:c5
+if ERRORLEVEL 6 call:c6
+if ERRORLEVEL 7 call:c7
+if ERRORLEVEL 8 call:c8
+if ERRORLEVEL 9 call:c9
+exit /b
+
+:c1
+ipconfig /all
 exit /b
