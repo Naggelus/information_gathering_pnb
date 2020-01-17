@@ -18,16 +18,17 @@ title Recon1
 exit /b
 
 :basic_info
+cls
 powershell /NoProfile /NoLogo /command "Write-Host -NoNewLine -ForegroundColor DarkYellow 'Username: '; Write-Host $env:USERNAME; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Computername: '; Write-Host $env:COMPUTERNAME; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Windows Edition: '; gwmi win32_operatingsystem | %% caption; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Windows Version: '; (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion').ReleaseId;"
 echo.
 echo Options:
 echo 1) ipconfig
-echo 2) [WIP]
+echo.
+echo More commands coming soon!
 exit /b
 
 :select
 choice /C 123456789 /N
-cls
 if ERRORLEVEL 1 call:c1
 if ERRORLEVEL 2 call:c2
 if ERRORLEVEL 3 call:c3
@@ -40,5 +41,6 @@ if ERRORLEVEL 9 call:c9
 exit /b
 
 :c1
+cls
 ipconfig /all
 exit /b
