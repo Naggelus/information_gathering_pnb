@@ -19,6 +19,7 @@ exit /b
 
 :basic_info
 cls
+echo.
 powershell /NoProfile /NoLogo /command "Write-Host -NoNewLine -ForegroundColor DarkYellow 'Username: '; Write-Host $env:USERNAME; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Computername: '; Write-Host $env:COMPUTERNAME; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Windows Edition: '; gwmi win32_operatingsystem | %% caption; Write-Host -NoNewLine -ForegroundColor DarkYellow 'Windows Version: '; (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion').ReleaseId;"
 echo.
 echo Options:
@@ -38,6 +39,7 @@ if ERRORLEVEL 6 call:c6
 if ERRORLEVEL 7 call:c7
 if ERRORLEVEL 8 call:c8
 if ERRORLEVEL 9 call:c9
+if ERRORLEVEL 255 exit /b
 exit /b
 
 :c1
