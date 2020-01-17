@@ -43,6 +43,6 @@ exit /b
 :c1
 cls
 rem ipconfig /all
-powershell /NoProfile /NoLogo /command "Get-NetIPAddress | ?{$_.AddressFamily -ilike 'IPv4'} | select @{Name='Interface';Expression={$_.InterfaceAlias}},IPAddress | sort | fl"
+powershell /NoProfile /NoLogo /command "Get-NetIPConfiguration | ?{$_.InterfaceAlias -notlike '*Bluetooth*' -and $_.InterfaceAlias -notlike '*Virtual*' } | select @{Name='<==================';Expression={}},@{Name='Interface';Expression={$_.InterfaceAlias}},@{Name='IP';Expression={$_.IPv4Address}},@{Name='Gateway';Expression={$_.IPv4DefaultGateway.NextHop}},@{Name='DNS';Expression={$_.DNSServer.ServerAddresses}},@{Name='==================>';Expression={}} | sort | fl"
 exit /b
 
