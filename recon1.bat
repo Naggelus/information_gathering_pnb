@@ -1,4 +1,4 @@
-@echo off
+rem @echo off
 call:init
 
 :main_loop
