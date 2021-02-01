@@ -31,16 +31,16 @@ exit /b
 
 :select
 choice /C 123456789 /N
-if ERRORLEVEL 1 call:c1
-if ERRORLEVEL 2 call:c2
-if ERRORLEVEL 3 call:c3
-if ERRORLEVEL 4 call:c4
-if ERRORLEVEL 5 call:c5
-if ERRORLEVEL 6 call:c6
-if ERRORLEVEL 7 call:c7
-if ERRORLEVEL 8 call:c8
-if ERRORLEVEL 9 call:c9
 if ERRORLEVEL 255 exit /b
+if ERRORLEVEL 9 call:c9
+if ERRORLEVEL 8 call:c8
+if ERRORLEVEL 7 call:c7
+if ERRORLEVEL 6 call:c6
+if ERRORLEVEL 5 call:c5
+if ERRORLEVEL 4 call:c4
+if ERRORLEVEL 3 call:c3
+if ERRORLEVEL 2 call:c2
+if ERRORLEVEL 1 call:c1
 exit /b
 
 :c1
